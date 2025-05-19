@@ -1,0 +1,93 @@
+import doctest
+from math import sqrt
+
+
+class Triangle:
+    def __init__(self, x, y, z):
+        """
+        Создание и подготовка к работе объекта "Треугольник"
+
+        :param x: 1 сторона треугольника
+        :param y: 2 сторона треугольника
+        :param z: 3 сторона треугольника
+
+        Примеры:
+        >>> tri = triangle_formulas(1, 2, 4)  # инициализация экземпляра класса
+        """
+
+        if not (x + y > z or x + z > y or z + y > x):
+            raise ValueError('''Сумма длин двух любых сторон треугольника должна быть больше длины 
+            оставшейся стороны''')
+
+        if not isinstance(x, (int, float)):
+            raise TypeError("Сторона треугольника должна быть типа int или float")
+        if x <= 0:
+            raise ValueError("Сторона треугольника должна быть положительным числом")
+        self.x = x
+
+        if not isinstance(y, (int, float)):
+            raise TypeError("Сторона треугольника должна быть типа int или float")
+        if y <= 0:
+            raise ValueError("Сторона треугольника должна быть положительным числом")
+        self.y = y
+
+        if not isinstance(z, (int, float)):
+            raise TypeError("Сторона треугольника должна быть типа int или float")
+        if z <= 0:
+            raise ValueError("Сторона треугольника должна быть положительным числом")
+        self.z = z
+
+    def tri_area(self):
+        """
+        Данная функция определяет площадь треугольника
+
+        :return: Площаль треугольника
+
+        Примеры:
+        >>> tri_a = triangle_formulas(1, 2, 3)
+        >>> tri_a.tri_area()
+        0.0
+        """
+
+        p = (self.x + self.y + self.z) / 2
+        return sqrt(p * (p - self.x) * (p - self.y) * (p - self.z))
+
+    def tri_perimeter(self):
+        """
+        Данная функция определяет периметр треугольника
+
+        :return: Периметр треугольника
+
+        Примеры:
+        >>> tri_b = triangle_formulas(1, 2, 3)
+        >>> tri_b.tri_perimeter()
+        6
+        """
+
+        return self.x + self.y + self.z
+
+    def tri_type(self):
+        """
+        Данная функция определяет тип треугольника: разносторонний, равнобедренный
+        или равносторонним
+
+        :return: Тип треугольника
+
+        Примеры:
+        >>> tri_c = triangle_formulas(1, 2, 3)
+        >>> tri_c.tri_type()
+        'Разносторонний'
+        """
+
+        if self.x == self.y == self.z:
+            result = 'Равносторонний'
+        elif (self.x == self.y and self.x != self.z) or (self.x == self.z and self.x != self.y) or (
+                self.z == self.y and self.z != self.x):
+            result = 'Равнобедренный'
+        else:
+            result = 'Разносторонний'
+
+        return result
+
+
+doctest.testmod()  # тестирование примеров, которые находятся в документации
