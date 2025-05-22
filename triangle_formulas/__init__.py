@@ -1,1 +1,1 @@
-from .code import Triangle
+from .code_t import Triangle

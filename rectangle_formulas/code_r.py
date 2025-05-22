@@ -10,11 +10,23 @@ class Rectangle:
         :param width: ширина прямоугольника
 
         Примеры:
-        >>> rec = rectangle_formulas(1, 2)  # инициализация экземпляра класса
+        >>> rec = Rectangle(1, 2)  # инициализация экземпляра класса
+        """
+
+        self.length = None
+        self.width = None
+        self.values(length, width)
+
+    def values(self, length, width):
+        """
+        Функция для задания и согласования аргументов для присваивания атрибутов экземпляров класса
+
+        :param length: длина прямоугольника
+        :param width:  ширина прямоугольника
         """
         if not isinstance(length, (int, float)):
             raise TypeError("Длина прямоугольника должна быть типа int или float")
-        if length < 0:
+        if length <= 0:
             raise ValueError("Длина прямоугольника должен быть положительным числом")
         self.length = length
 
@@ -31,7 +43,7 @@ class Rectangle:
         :return: Площаль прямоугольника
 
         Примеры:
-        >>> rec_a = rectangle_formulas(1, 2)
+        >>> rec_a = Rectangle(1, 2)
         >>> rec_a.rec_area()
         2
         """
@@ -45,7 +57,7 @@ class Rectangle:
         :return: Периметр прямоугольника
 
         Примеры:
-        >>> rec_b = rectangle_formulas(1, 2)
+        >>> rec_b = Rectangle(1, 2)
         >>> rec_b.rec_perimeter()
         6
         """
@@ -59,7 +71,7 @@ class Rectangle:
         :return: Диаметр прямоугольника
 
         Примеры:
-        >>> rec_c = rectangle_formulas(4, 3)
+        >>> rec_c = Rectangle(4, 3)
         >>> rec_c.rec_diagonal()
         5.0
         """

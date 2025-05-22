@@ -12,12 +12,18 @@ class Triangle:
         :param z: 3 сторона треугольника
 
         Примеры:
-        >>> tri = triangle_formulas(1, 2, 4)  # инициализация экземпляра класса
+        >>> tri = Triangle(1, 2, 4)  # инициализация экземпляра класса
         """
 
+        self.x = None
+        self.y = None
+        self.z = None
+        self.value_check(x, y, z)
+
+    def value_check(self, x, y, z):
         if not (x + y > z or x + z > y or z + y > x):
             raise ValueError('''Сумма длин двух любых сторон треугольника должна быть больше длины 
-            оставшейся стороны''')
+                оставшейся стороны''')
 
         if not isinstance(x, (int, float)):
             raise TypeError("Сторона треугольника должна быть типа int или float")
@@ -44,7 +50,7 @@ class Triangle:
         :return: Площаль треугольника
 
         Примеры:
-        >>> tri_a = triangle_formulas(1, 2, 3)
+        >>> tri_a = Triangle(1, 2, 3)
         >>> tri_a.tri_area()
         0.0
         """
@@ -59,7 +65,7 @@ class Triangle:
         :return: Периметр треугольника
 
         Примеры:
-        >>> tri_b = triangle_formulas(1, 2, 3)
+        >>> tri_b = Triangle(1, 2, 3)
         >>> tri_b.tri_perimeter()
         6
         """
@@ -74,7 +80,7 @@ class Triangle:
         :return: Тип треугольника
 
         Примеры:
-        >>> tri_c = triangle_formulas(1, 2, 3)
+        >>> tri_c = Triangle(1, 2, 3)
         >>> tri_c.tri_type()
         'Разносторонний'
         """
