@@ -6,9 +6,6 @@ class Rectangle:
         """
         Создание и подготовка к работе объекта "Прямоугольник"
 
-        :param length: длина прямоугольника
-        :param width: ширина прямоугольника
-
         Примеры:
         >>> rec = Rectangle(1, 2)  # инициализация экземпляра класса
         """
@@ -23,6 +20,24 @@ class Rectangle:
 
         :param length: длина прямоугольника
         :param width:  ширина прямоугольника
+
+        Примеры:
+        >>> rec = Rectangle('1', 2)
+        Traceback (most recent call last):
+        ...
+        TypeError: Длина прямоугольника должна быть типа int или float
+        >>> rec = Rectangle(-1, 2)
+        Traceback (most recent call last):
+        ...
+        ValueError: Длина прямоугольника должен быть положительным числом
+        >>> rec = Rectangle(1, '2')
+        Traceback (most recent call last):
+        ...
+        TypeError: Ширина прямоугольника должна быть int или float
+        >>> rec = Rectangle(1, -2)
+        Traceback (most recent call last):
+        ...
+        ValueError: Ширина прямоугольника не может быть отрицательным числом
         """
         if not isinstance(length, (int, float)):
             raise TypeError("Длина прямоугольника должна быть типа int или float")
@@ -31,7 +46,7 @@ class Rectangle:
         self.length = length
 
         if not isinstance(width, (int, float)):
-            raise TypeError("Ширина прямоугольника должно быть int или float")
+            raise TypeError("Ширина прямоугольника должна быть int или float")
         if width < 0:
             raise ValueError("Ширина прямоугольника не может быть отрицательным числом")
         self.width = width

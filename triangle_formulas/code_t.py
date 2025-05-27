@@ -7,10 +7,6 @@ class Triangle:
         """
         Создание и подготовка к работе объекта "Треугольник"
 
-        :param x: 1 сторона треугольника
-        :param y: 2 сторона треугольника
-        :param z: 3 сторона треугольника
-
         Примеры:
         >>> tri = Triangle(1, 2, 4)  # инициализация экземпляра класса
         """
@@ -21,26 +17,45 @@ class Triangle:
         self.value_check(x, y, z)
 
     def value_check(self, x, y, z):
-        if not (x + y > z or x + z > y or z + y > x):
-            raise ValueError('''Сумма длин двух любых сторон треугольника должна быть больше длины 
-                оставшейся стороны''')
+        """
+        Создание и подготовка к работе объекта "Треугольник"
+
+        :param x: 1 сторона треугольника
+        :param y: 2 сторона треугольника
+        :param z: 3 сторона треугольника
+
+        Примеры:
+        >>> tri_a = Triangle(0, 1, 2)
+        Traceback (most recent call last):
+        ...
+        ValueError: Сторона треугольника должна быть положительным числом
+        >>> tri_b = Triangle(1, '2', 4)
+        Traceback (most recent call last):
+        ...
+        TypeError: Сторона треугольника должна быть типа int или float
+        """
 
         if not isinstance(x, (int, float)):
             raise TypeError("Сторона треугольника должна быть типа int или float")
         if x <= 0:
             raise ValueError("Сторона треугольника должна быть положительным числом")
-        self.x = x
 
         if not isinstance(y, (int, float)):
             raise TypeError("Сторона треугольника должна быть типа int или float")
         if y <= 0:
             raise ValueError("Сторона треугольника должна быть положительным числом")
-        self.y = y
 
         if not isinstance(z, (int, float)):
             raise TypeError("Сторона треугольника должна быть типа int или float")
         if z <= 0:
             raise ValueError("Сторона треугольника должна быть положительным числом")
+
+        if not (x + y > z or x + z > y or z + y > x):
+            raise ValueError('''Сумма длин двух любых сторон треугольника должна быть больше длины 
+                оставшейся стороны''')
+
+        self.x = x
+        self.y = y
         self.z = z
 
     def tri_area(self):

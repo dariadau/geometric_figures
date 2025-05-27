@@ -6,8 +6,7 @@ class Circle:
     def __init__(self, radius, angle=0):
         """
         Создание и подготовка к работе объекта "Окружность"
-        :param radius: радиус окружности
-        :param angle: угол окружности
+
         Примеры:
         >>> circ_a = Circle(5)  # инициализация экземпляра класса
         >>> circ_b = Circle(5, 30)    # инициализация экземпляра класса
@@ -21,11 +20,26 @@ class Circle:
         """
         Функция для задания и согласования аргументов для присваивания атрибутов экземпляров класса
 
+        :param radius: радиус окружности
+        :param angle: угол окружности
+
         Пример:
         >>> circ_c = Circle(-3)
         Traceback (most recent call last):
         ...
         ValueError: Радиус должен быть положительным числом
+        >>> circ_c = Circle(3, -30)
+        Traceback (most recent call last):
+        ...
+        ValueError: Угол сектора должен быть положительным числом
+        >>> circ_c = Circle('3', 30)
+        Traceback (most recent call last):
+        ...
+        TypeError: Радиус должен быть типа int или float
+        >>> circ_c = Circle(3, '30')
+        Traceback (most recent call last):
+        ...
+        TypeError: Угол сектора должен быть типа int или float
         """
 
         if radius:
