@@ -3,7 +3,7 @@ from math import pi
 
 
 class Circle:
-    def __init__(self, radius, angle=0):
+    def __init__(self, radius: float, angle: float=0):
         """
         Создание и подготовка к работе объекта "Окружность"
 
@@ -16,9 +16,9 @@ class Circle:
         self.angle = None
         self.define_values(radius, angle)
 
-    def define_values(self, radius, angle=0):
+    def define_values(self, radius: float, angle: float=0):
         """
-        Функция для задания и согласования аргументов для присваивания атрибутов экземпляров класса
+        Метод для задания и согласования аргументов для присваивания атрибутов экземпляров класса
 
         :param radius: радиус окружности
         :param angle: угол окружности
@@ -42,19 +42,17 @@ class Circle:
         TypeError: Угол сектора должен быть типа int или float
         """
 
-        if radius:
-            if not isinstance(radius, (int, float)):
-                raise TypeError("Радиус должен быть типа int или float")
-            if radius <= 0:
-                raise ValueError("Радиус должен быть положительным числом")
-            self.radius = radius
+        if not isinstance(radius, (int, float)):
+            raise TypeError("Радиус должен быть типа int или float")
+        if radius <= 0:
+            raise ValueError("Радиус должен быть положительным числом")
+        self.radius = radius
 
-        if angle:
-            if not isinstance(angle, (int, float)):
-                raise TypeError("Угол сектора должен быть типа int или float")
-            if angle <= 0:
-                raise ValueError("Угол сектора должен быть положительным числом")
-            self.angle = angle
+        if not isinstance(angle, (int, float)):
+            raise TypeError("Угол сектора должен быть типа int или float")
+        if angle <= 0:
+            raise ValueError("Угол сектора должен быть положительным числом")
+        self.angle = angle
 
     def circ_area(self):
         """
