@@ -1,20 +1,20 @@
 # geometric_figures
 В данной библиотеке представлены формулы для окружности, прямоугольника и треугольника
 
-!прочитать как исправить!
-geometric_figures/  
-├── `README.md`  
-├── `__init__.py`  
-├── circle_formulas/  
-│&nbsp;&nbsp;&nbsp;├── `__init__.py`  
-│    └── `code.py`  
-├── rectangle_formulas/  
-│    ├── `__init__.py`  
-│    └── `code.py`  
-└── triangle_formulas/  
-├── `__init__.py`  
-    └── `code.py`  
-!прочитать как исправить!
+## Структура проекта
+```bash
+circle_formulas/  
+     ├── __init__.py  
+     └── code_с.py  
+rectangle_formulas/  
+     ├── __init__.py  
+     └── code_r.py  
+triangle_formulas/  
+     ├── __init__.py  
+     └── code_t.py  
+__init__.py  
+README.md
+```
 
 ## 🟠circle_formulas
 
