@@ -52,10 +52,10 @@ class Rectangle:
         self.width = width
 
     def __str__(self):
-        return 'Класс для использования формул треугольника'
+        return f'Класс для использования формул прямоугольника. Параметры: длина = {self.length}, ширина = {self.width}'
 
     def __repr__(self):
-        return f'{self.__class__.__name__}({self.length!r}, {self.width!r})'
+        return f'{self.__class__.__name__}({self.length}, {self.width})'
 
     def change_length(self, changer):
         """
