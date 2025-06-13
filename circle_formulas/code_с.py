@@ -55,10 +55,10 @@ class Circle:
         self.angle = angle
 
     def __str__(self):
-        return 'Класс для использования формул окружности'
+        return f'Класс для использования формул окружности. Угол = {self.angle}, радиус = {self.radius}'
 
     def __repr__(self):
-        return f'{self.__class__.__name__}({self.radius!r}, {self.angle!r})'
+        return f'{self.__class__.__name__}({self.radius}, {self.angle})'
 
     def change_radius(self, x):
         """
