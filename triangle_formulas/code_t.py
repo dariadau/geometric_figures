@@ -59,10 +59,10 @@ class Triangle:
         self.z = z
 
     def __str__(self):
-        return 'Класс для использования формул треугольника'
+        return f'Класс для использования формул треугольника. Треугольник имеет следующие стороны: x = {self.x}, y = {self.y}, z = {self.z}'
 
     def __repr__(self):
-        return f'{self.__class__.__name__}({self.x!r}, {self.y!r}, {self.z!r})'
+        return f'{self.__class__.__name__}({self.x}, {self.y}, {self.z})'
 
     def change_side_x(self, x):
         """
