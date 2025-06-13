@@ -51,6 +51,28 @@ class Rectangle:
             raise ValueError("Ширина прямоугольника не может быть отрицательным числом")
         self.width = width
 
+    def __str__(self):
+        return 'Класс для использования формул треугольника'
+
+    def __repr__(self):
+        return f'{self.__class__.__name__}({self.length!r}, {self.width!r})'
+
+    def change_length(self, changer):
+        """
+        Метод для замены значения длины прямоугольника
+
+        :param changer: новое значение для длины прямоугольника
+
+        Примеры:
+        >>> rec_a = Rectangle(1, 2)
+        >>> rec_a.change_length(3)
+        """
+        if not isinstance(changer, (int, float)):
+            raise TypeError("Длина прямоугольника должна быть типа int или float")
+        if changer <= 0:
+            raise ValueError("Длина прямоугольника должен быть положительным числом")
+        self.length = changer
+
     def rec_area(self):
         """
         Данная функция определяет площадь прямоугольника

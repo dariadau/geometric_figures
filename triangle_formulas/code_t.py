@@ -58,6 +58,28 @@ class Triangle:
         self.y = y
         self.z = z
 
+    def __str__(self):
+        return 'Класс для использования формул треугольника'
+
+    def __repr__(self):
+        return f'{self.__class__.__name__}({self.x!r}, {self.y!r}, {self.z!r})'
+
+    def change_side_x(self, x):
+        """
+        Метод для замены длины стороны x
+
+        :param x: новое значение для стороны x
+
+        Примеры:
+        >>> rec_c = Triangle(1, 2, 3)
+        >>> rec_c.change_side_x(4)
+        """
+        if not isinstance(x, (int, float)):
+            raise TypeError("Сторона x должна быть типа int или float")
+        if x <= 0:
+            raise ValueError("Сторона x должна быть положительной")
+        self.x = x
+
     def tri_area(self):
         """
         Данная функция определяет площадь треугольника

@@ -3,7 +3,7 @@ from math import pi
 
 
 class Circle:
-    def __init__(self, radius: float, angle: float=0):
+    def __init__(self, radius: float, angle: float = 0):
         """
         Создание и подготовка к работе объекта "Окружность"
 
@@ -16,7 +16,7 @@ class Circle:
         self.angle = None
         self.define_values(radius, angle)
 
-    def define_values(self, radius: float, angle: float=0):
+    def define_values(self, radius: float, angle: float = 0):
         """
         Метод для задания и согласования аргументов для присваивания атрибутов экземпляров класса
 
@@ -31,7 +31,7 @@ class Circle:
         >>> circ_c = Circle(3, -30)
         Traceback (most recent call last):
         ...
-        ValueError: Угол сектора должен быть положительным числом
+        ValueError: Угол сектора должен быть неотрицательным числом
         >>> circ_c = Circle('3', 30)
         Traceback (most recent call last):
         ...
@@ -50,9 +50,31 @@ class Circle:
 
         if not isinstance(angle, (int, float)):
             raise TypeError("Угол сектора должен быть типа int или float")
-        if angle <= 0:
-            raise ValueError("Угол сектора должен быть положительным числом")
+        if angle < 0:
+            raise ValueError("Угол сектора должен быть неотрицательным числом")
         self.angle = angle
+
+    def __str__(self):
+        return 'Класс для использования формул окружности'
+
+    def __repr__(self):
+        return f'{self.__class__.__name__}({self.radius!r}, {self.angle!r})'
+
+    def change_radius(self, x):
+        """
+        Метод для замены значения радиуса окружности
+
+        :param x: новое значение для радиуса окружности
+
+        Примеры:
+        >>> rec_c = Circle(1, 2)
+        >>> rec_c.change_radius(3)
+        """
+        if not isinstance(x, (int, float)):
+            raise TypeError("Радиус окружности должен быть типа int или float")
+        if x <= 0:
+            raise ValueError("Радиус окружности должен быть положительным числом")
+        self.radius = x
 
     def circ_area(self):
         """
