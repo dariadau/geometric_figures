@@ -3,6 +3,8 @@ from math import pi
 
 
 class Circle:
+    circle_counter = 0  # счетчик созданных фигур
+
     def __init__(self, radius: float, angle: float = 0):
         """
         Создание и подготовка к работе объекта "Окружность"
@@ -59,6 +61,14 @@ class Circle:
 
     def __repr__(self):
         return f'{self.__class__.__name__}({self.radius}, {self.angle})'
+
+    @classmethod
+    def incr_counter(cls):
+        """
+        Метод, который увеличивает число уже созданных треугольников
+        """
+
+        cls.circle_counter += 1
 
     def change_radius(self, x):
         """

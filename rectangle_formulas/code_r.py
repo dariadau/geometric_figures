@@ -2,6 +2,8 @@ import doctest
 
 
 class Rectangle:
+    rectangle_counter = 0  # счетчик созданных фигур
+
     def __init__(self, length: float, width: float):
         """
         Создание и подготовка к работе объекта "Прямоугольник"
@@ -56,6 +58,14 @@ class Rectangle:
 
     def __repr__(self):
         return f'{self.__class__.__name__}({self.length}, {self.width})'
+
+    @classmethod
+    def incr_counter(cls):
+        """
+        Метод, который увеличивает число уже созданных прямоугольников
+        """
+
+        cls.rectangle_counter += 1
 
     def change_length(self, changer):
         """

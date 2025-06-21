@@ -3,6 +3,8 @@ from math import sqrt
 
 
 class Triangle:
+    triangle_counter = 0  # счетчик созданных фигур
+
     def __init__(self, x, y, z):
         """
         Создание и подготовка к работе объекта "Треугольник"
@@ -63,6 +65,14 @@ class Triangle:
 
     def __repr__(self):
         return f'{self.__class__.__name__}({self.x}, {self.y}, {self.z})'
+
+    @classmethod
+    def incr_counter(cls):
+        """
+        Метод, который увеличивает число уже созданных треугольников
+        """
+
+        cls.triangle_counter += 1
 
     def change_side_x(self, x):
         """
