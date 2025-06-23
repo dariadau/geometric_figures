@@ -17,6 +17,7 @@ class Circle:
         self.radius = None
         self.angle = None
         self.define_values(radius, angle)
+        self.incr_counter()
 
     def define_values(self, radius: float, angle: float = 0):
         """
@@ -60,7 +61,7 @@ class Circle:
         return f'Класс для использования формул окружности. Угол = {self.angle}, радиус = {self.radius}'
 
     def __repr__(self):
-        return f'{self.__class__.__name__}({self.radius}, {self.angle})'
+        return f'{self.__class__.__name__}(radius={self.radius}, angle={self.angle})'
 
     @classmethod
     def incr_counter(cls):
