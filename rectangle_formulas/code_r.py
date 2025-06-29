@@ -59,14 +59,6 @@ class Rectangle:
     def __repr__(self):
         return f'{self.__class__.__name__}({self.length}, {self.width})'
 
-    @classmethod
-    def incr_counter(cls):
-        """
-        Метод, который увеличивает число уже созданных прямоугольников
-        """
-
-        cls.rectangle_counter += 1
-
     def change_length(self, changer):
         """
         Метод для замены значения длины прямоугольника
@@ -124,6 +116,14 @@ class Rectangle:
         """
 
         return ((self.length ** 2) + (self.width ** 2)) ** (1 / 2)
+
+    @classmethod
+    def incr_counter(cls):
+        """
+        Метод, который увеличивает число уже созданных прямоугольников
+        """
+
+        cls.rectangle_counter += 1
 
 
 doctest.testmod()  # тестирование примеров, которые находятся в документации

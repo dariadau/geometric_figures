@@ -63,14 +63,6 @@ class Circle:
     def __repr__(self):
         return f'{self.__class__.__name__}(radius={self.radius}, angle={self.angle})'
 
-    @classmethod
-    def incr_counter(cls):
-        """
-        Метод, который увеличивает число уже созданных треугольников
-        """
-
-        cls.circle_counter += 1
-
     def change_radius(self, x):
         """
         Метод для замены значения радиуса окружности
@@ -129,6 +121,14 @@ class Circle:
         """
 
         return (pi * self.radius ** 2) / 360 * self.angle
+
+    @classmethod
+    def incr_counter(cls):
+        """
+        Метод, который увеличивает число уже созданных треугольников
+        """
+
+        cls.circle_counter += 1
 
 
 doctest.testmod()  # тестирование примеров, которые находятся в документации

@@ -66,14 +66,6 @@ class Triangle:
     def __repr__(self):
         return f'{self.__class__.__name__}({self.x}, {self.y}, {self.z})'
 
-    @classmethod
-    def incr_counter(cls):
-        """
-        Метод, который увеличивает число уже созданных треугольников
-        """
-
-        cls.triangle_counter += 1
-
     def change_side_x(self, x):
         """
         Метод для замены длины стороны x
@@ -141,6 +133,14 @@ class Triangle:
             result = 'Разносторонний'
 
         return result
+
+    @classmethod
+    def incr_counter(cls):
+        """
+        Метод, который увеличивает число уже созданных треугольников
+        """
+
+        cls.triangle_counter += 1
 
 
 doctest.testmod()  # тестирование примеров, которые находятся в документации
