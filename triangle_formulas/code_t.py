@@ -1,5 +1,6 @@
 import doctest
 from math import sqrt
+from random import randint
 
 
 class Triangle:
@@ -59,12 +60,6 @@ class Triangle:
         self.x = x
         self.y = y
         self.z = z
-
-    def __str__(self):
-        return f'Класс для использования формул треугольника. Треугольник имеет следующие стороны: x = {self.x}, y = {self.y}, z = {self.z}'
-
-    def __repr__(self):
-        return f'{self.__class__.__name__}({self.x}, {self.y}, {self.z})'
 
     def change_side_x(self, x):
         """
@@ -141,6 +136,21 @@ class Triangle:
         """
 
         cls.triangle_counter += 1
+
+    def __str__(self):
+        return f'Класс для использования формул треугольника. Треугольник имеет следующие стороны: x = {self.x}, y = {self.y}, z = {self.z}'
+
+    def __repr__(self):
+        return f'{self.__class__.__name__}({self.x}, {self.y}, {self.z})'
+
+    @staticmethod
+    def create_random_tri():
+        """Данный метод помогает не придумывать самому треугольник, а создать его с произвольнми 3 значениями.
+        Каждая длина будет находиться в диапазоне от 5 до 15 включительно.
+        """
+
+        sides = [randint(5, 16) for _ in range(3)]
+        return Triangle(sides[0], sides[1], sides[2])
 
 
 doctest.testmod()  # тестирование примеров, которые находятся в документации

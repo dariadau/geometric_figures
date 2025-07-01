@@ -53,11 +53,6 @@ class Rectangle:
             raise ValueError("Ширина прямоугольника не может быть отрицательным числом")
         self.width = width
 
-    def __str__(self):
-        return f'Класс для использования формул прямоугольника. Параметры: длина = {self.length}, ширина = {self.width}'
-
-    def __repr__(self):
-        return f'{self.__class__.__name__}({self.length}, {self.width})'
 
     def change_length(self, changer):
         """
@@ -116,6 +111,12 @@ class Rectangle:
         """
 
         return ((self.length ** 2) + (self.width ** 2)) ** (1 / 2)
+
+    def __str__(self):
+        return f'Класс для использования формул прямоугольника. Параметры: длина = {self.length}, ширина = {self.width}'
+
+    def __repr__(self):
+        return f'{self.__class__.__name__}({self.length}, {self.width})'
 
     @classmethod
     def incr_counter(cls):

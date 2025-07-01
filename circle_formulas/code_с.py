@@ -57,12 +57,6 @@ class Circle:
             raise ValueError("Угол сектора должен быть неотрицательным числом")
         self.angle = angle
 
-    def __str__(self):
-        return f'Класс для использования формул окружности. Угол = {self.angle}, радиус = {self.radius}'
-
-    def __repr__(self):
-        return f'{self.__class__.__name__}(radius={self.radius}, angle={self.angle})'
-
     def change_radius(self, x):
         """
         Метод для замены значения радиуса окружности
@@ -121,6 +115,12 @@ class Circle:
         """
 
         return (pi * self.radius ** 2) / 360 * self.angle
+
+    def __str__(self):
+        return f'Класс для использования формул окружности. Угол = {self.angle}, радиус = {self.radius}'
+
+    def __repr__(self):
+        return f'{self.__class__.__name__}(radius={self.radius}, angle={self.angle})'
 
     @classmethod
     def incr_counter(cls):
